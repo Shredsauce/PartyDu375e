@@ -6,12 +6,14 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Partier : MonoBehaviour {
 	
+	public Transform target { get; set; }
 	private NavMeshAgent m_agent;
-	[SerializeField]
-	private Transform target;
 
 	void Start () {
 		m_agent = GetComponent<NavMeshAgent>();
+
+		// TODO: Temporary, use better way of finding the target
+		target = GameObject.Find("Target").transform;
 	}
 
 	void Update () {
@@ -21,5 +23,10 @@ public class Partier : MonoBehaviour {
 		}
 
 		m_agent.destination = target.position;
+	}
+
+	void OnDestroy () {
+		// Remove this partier from the list
+		PartierSpawner.partiers.Remove(this);
 	}
 }
