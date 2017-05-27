@@ -13,7 +13,6 @@ public class CarScoreManager : MonoBehaviour {
     public static GameObject[] coneSpawner;
     public static List<GameObject> availableCone = new List<GameObject>();
     public static List<GameObject> partierSpawner = new List<GameObject>();
-    public GameObject conePrefab;
     float coneFrequency=5;
     [SerializeField]
     float coneFrequencyTimer;
@@ -54,7 +53,7 @@ public class CarScoreManager : MonoBehaviour {
         if (availableCone.Count>=1)
         {
             int rng = Random.Range(0, availableCone.Count - 1);
-            GameObject coneClone = Instantiate(conePrefab, availableCone[rng].transform.position, Quaternion.identity) as GameObject;
+			GameObject coneClone = Instantiate(Resources.Load("Cone"), availableCone[rng].transform.position, Quaternion.identity) as GameObject;
             coneClone.GetComponent<Cone>().spawner = availableCone[rng];
             availableCone[rng].GetComponent<ConeSpawner>().hasCone = true;
             coneInPlay++;
