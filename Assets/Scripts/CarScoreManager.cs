@@ -6,35 +6,42 @@ using UnityEngine;
 public class CarScoreManager : MonoBehaviour {
 
     public static int coneInPlay;
-    public static int partierInPlay;
+    public static int totalObstacle;
     public float timer;
     public float arrivedUser;
     public float coneRemoved;
-    public static List<GameObject> coneSpawner;
-    public static List<GameObject> availableCone;
-    public static List<GameObject> partierSpawner;
+    public static GameObject[] coneSpawner;
+    public static List<GameObject> availableCone = new List<GameObject>();
+    public static List<GameObject> partierSpawner = new List<GameObject>();
     public GameObject conePrefab;
+    float coneFrequency=5;
+    public float coneFrequencyTimer;
 
     // Use this for initialization
     void Start () {
         timer = 375;
-        coneSpawner.Equals( GameObject.FindGameObjectsWithTag("ConeSpawner"));
-        SpawnCone();
-
+        coneSpawner = GameObject.FindGameObjectsWithTag("ConeSpawner");
+        coneFrequencyTimer = 5;
     }
 	
 	// Update is called once per frame
 	void Update () {
 
         timer = timer - Time.deltaTime;
-		
-	}
 
+        coneFrequencyTimer = coneFrequencyTimer-Time.deltaTime;
+        if (coneFrequencyTimer<0)
+        {
+            coneFrequencyTimer = coneFrequency;
+            SpawnCone();
+        }
+    }
 
+ 
     public void SpawnCone()
     {
         availableCone.Clear();
-        for (int i =0; i< coneSpawner.Count; i++)
+        for (int i =0; i<coneSpawner.Length; i++)
         {
             if (!coneSpawner[i].GetComponent<ConeSpawner>().hasCone)
             {
@@ -42,15 +49,17 @@ public class CarScoreManager : MonoBehaviour {
             }
             
         }
-        int rng = Random.Range(0, availableCone.Count - 1);
 
-        GameObject coneClone = Instantiate(conePrefab, availableCone[rng].transform) as GameObject;
-
-
+        if (availableCone.Count>=1)
+        {
+            int rng = Random.Range(0, availableCone.Count - 1);
+            GameObject coneClone = Instantiate(conePrefab, availableCone[rng].transform.position, Quaternion.identity) as GameObject;
+            coneClone.GetComponent<Cone>().spawner = availableCone[rng];
+            availableCone[rng].GetComponent<ConeSpawner>().hasCone = true;
+            coneInPlay++;
+            totalObstacle++;
+        }
     }
 
-    public void SpawnPartier()
-    {
-
-    }
+    
 }

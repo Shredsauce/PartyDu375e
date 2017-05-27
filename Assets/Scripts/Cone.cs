@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Cone : MonoBehaviour {
     public GameObject car;
+    public GameObject spawner;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         car = FindObjectOfType<UnityStandardAssets.Vehicles.Car.CarController>().gameObject;
     }
 	
@@ -21,8 +22,10 @@ public class Cone : MonoBehaviour {
         //When the player car collides with a cone, enter the IF
         if (other.gameObject.tag == "Player")
         {
-            car.GetComponent<CarScoreManager>().coneRemoved += 1;
-            CarScoreManager.coneInPlay -= 1;
+            car.GetComponent<CarScoreManager>().coneRemoved++;
+            CarScoreManager.coneInPlay--;
+            CarScoreManager.totalObstacle--;
+            spawner.GetComponent<ConeSpawner>().hasCone = false;
             Destroy(this.gameObject);
         }
     }
