@@ -69,7 +69,10 @@
      <Compile Include="Assets\NavMeshExamples\Tests\NavMeshSurfaceModifierTests.cs" />
      <Compile Include="Assets\NavMeshExamples\Tests\NavMeshSurfaceModifierVolumeTests.cs" />
      <Compile Include="Assets\NavMeshExamples\Tests\NavMeshSurfaceTests.cs" />
+     <Compile Include="Assets\Script\CarScoreManager.cs" />
+     <Compile Include="Assets\Script\Cone.cs" />
      <Compile Include="Assets\Script\SmoothFollow2.cs" />
+     <Compile Include="Assets\Script\UIManager.cs" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
      <None Include="Assets\Standard Assets\Vehicles\Aircraft\AircraftGuidelines.txt" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\ReflectiveDiffuseSpecTransp.shader" />

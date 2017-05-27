@@ -32,3 +32,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/Prefab.meta
+PartyDu375e.sln
