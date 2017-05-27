@@ -24,6 +24,7 @@ public class Cone : MonoBehaviour {
             car.GetComponent<CarScoreManager>().coneRemoved++;
             CarScoreManager.coneInPlay--;
             CarScoreManager.totalObstacle--;
+            CarScoreManager.score++;
             spawner.GetComponent<ConeSpawner>().hasCone = false;
             Destroy(this.gameObject);
 
