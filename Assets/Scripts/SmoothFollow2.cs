@@ -12,7 +12,7 @@ public class SmoothFollow2 : MonoBehaviour
     public float rotationDamping = 10.0f;
 
     void FixedUpdate()
-    {
+    {/*
         Vector3 wantedPosition;
         if (followBehind)
             wantedPosition = target.TransformPoint(0, height, -distance);
@@ -27,5 +27,19 @@ public class SmoothFollow2 : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, Time.deltaTime * rotationDamping);
         }
         else transform.LookAt(target, target.up);
+    }
+    */
+    
+        Vector3 wantedPosition;
+        wantedPosition = target.TransformPoint(0, height, -distance);
+        Vector3 newPosition;
+        newPosition = Vector3.Lerp(transform.position, wantedPosition, Time.deltaTime * damping);
+        transform.position = new Vector3(newPosition.x, height, newPosition.z);
+
+        Quaternion wantedRotation = Quaternion.LookRotation(target.position - transform.position, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, Time.deltaTime * rotationDamping);
+
+
+
     }
 }

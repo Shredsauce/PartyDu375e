@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour {
         textTimer.text = ""+ timer;
 
         //Get arrived user float from car score manager and put it in the ui text
-        arrived = car.GetComponent<CarScoreManager>().arrivedUser;
+        arrived = CarScoreManager.arrivedUser;
         textArrived.text = "" + arrived;
 
         //Get coneremoved float from car score manager and put it in the ui text
