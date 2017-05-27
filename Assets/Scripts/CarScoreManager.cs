@@ -15,7 +15,8 @@ public class CarScoreManager : MonoBehaviour {
     public static List<GameObject> partierSpawner = new List<GameObject>();
     public GameObject conePrefab;
     float coneFrequency=5;
-    public float coneFrequencyTimer;
+    [SerializeField]
+    float coneFrequencyTimer;
 
     // Use this for initialization
     void Start () {
