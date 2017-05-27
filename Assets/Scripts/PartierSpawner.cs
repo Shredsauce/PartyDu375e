@@ -11,15 +11,24 @@ public class PartierSpawner : MonoBehaviour {
 	private float waitMin = 0.5f;
 	[SerializeField]
 	private float waitMax = 1f;
-	
+
+	private List<GameObject> partierPrefabs = new List<GameObject>();
+
 	void Awake () {
+		// Add the partier prefabs, find them by name
+		partierPrefabs.Add((GameObject)Resources.Load("Partiers/ChildPartier"));
+		partierPrefabs.Add((GameObject)Resources.Load("Partiers/FemalePartier"));
+		partierPrefabs.Add((GameObject)Resources.Load("Partiers/MalePartier"));
+
 		StartCoroutine (WaitToAddPartier());
 	}
 
 	// Adds new partiers recursively forever and ever
 	private IEnumerator WaitToAddPartier () {
-		
-		GameObject partierGO = (GameObject)Instantiate(Resources.Load("Partier"));
+
+		// Instantiate a random partier
+		GameObject partierGO = (GameObject)Instantiate(partierPrefabs[UnityEngine.Random.Range(0, partierPrefabs.Count)]);
+
 		Partier partier = partierGO.GetComponent<Partier>();
 		partier.transform.position = this.transform.position;
 		// Add the partiers to the list

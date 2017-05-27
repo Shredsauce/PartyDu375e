@@ -32,6 +32,7 @@ public class Partier : MonoBehaviour {
 		m_agent = GetComponent<NavMeshAgent>();
 		rb = GetComponent<Rigidbody>();
 		coll = GetComponent<Collider>();
+		rb.isKinematic = true;
 		coll.isTrigger = true;
 
 		// TODO: Temporary, use better way of finding the target

@@ -4,32 +4,30 @@ using UnityEngine;
 
 public class Cone : MonoBehaviour {
 	
-    public GameObject car;
-    public GameObject spawner;
-
-    // Use this for initialization
-    void Start () {
-        car = FindObjectOfType<UnityStandardAssets.Vehicles.Car.CarController>().gameObject;
-    }
-	
-	void Update () {
-		
-	}
+	public ConeSpawner spawner;
 
     void OnTriggerEnter(Collider other)
     {
         //When the player car collides with a cone, enter the IF
         if (other.gameObject.tag == "Player")
         {
-            car.GetComponent<CarScoreManager>().coneRemoved++;
-            CarScoreManager.coneInPlay--;
-            CarScoreManager.totalObstacle--;
-            CarScoreManager.score++;
-            spawner.GetComponent<ConeSpawner>().hasCone = false;
-            Destroy(this.gameObject);
-
-//			CarScoreManager.Instance.
-
+			PickUp ();
         }
     }
+
+	private void PickUp () {
+		CarScoreManager.Instance.coneRemoved++;
+		CarScoreManager.coneInPlay--;
+		CarScoreManager.totalObstacle--;
+		CarScoreManager.score++;
+		spawner.HasCone = false;
+		CarScoreManager.Instance.anim.SetTrigger("pickup");
+
+		StartCoroutine(WaitToDisappear ());
+	}
+
+	private IEnumerator WaitToDisappear () {
+		yield return new WaitForSeconds(0f);
+		Destroy(this.gameObject);
+	}
 }
