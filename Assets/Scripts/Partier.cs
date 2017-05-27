@@ -46,6 +46,9 @@ public class Partier : MonoBehaviour {
 			return;
 		}
 
+		if (!m_agent.isOnNavMesh)
+			return;
+			
 		if (m_agent.enabled)
 			m_agent.destination = target.position;
 
@@ -63,7 +66,6 @@ public class Partier : MonoBehaviour {
 	void OnTriggerEnter (Collider coll) {
 
 		if (coll.tag == "Player") {
-			Debug.Log(coll.name);
 			Dazed(coll.GetComponentInParent<Rigidbody>());
 		}
 	}
