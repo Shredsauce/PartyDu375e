@@ -6,22 +6,29 @@ using UnityEngine;
 public class CarScoreManager : MonoBehaviour {
 
     public static int coneInPlay;
+    public static int chickenInPlay;
     public static int totalObstacle;
     public float timer;
     public float arrivedUser;
     public float coneRemoved;
     public static GameObject[] coneSpawner;
     public static List<GameObject> availableCone = new List<GameObject>();
-    public static List<GameObject> partierSpawner = new List<GameObject>();
+    public static GameObject[] chickenSpawner;
+    public static List<GameObject> availableChicken = new List<GameObject>();
     float coneFrequency=5;
     [SerializeField]
     float coneFrequencyTimer;
+    float chickenFrequency = 5;
+    float chickenFrequencyTimer;
+
 
     // Use this for initialization
     void Start () {
         timer = 375;
         coneSpawner = GameObject.FindGameObjectsWithTag("ConeSpawner");
+        chickenSpawner = GameObject.FindGameObjectsWithTag("ChickenSpawner");
         coneFrequencyTimer = 5;
+        chickenFrequencyTimer = 5;
     }
 	
 	// Update is called once per frame
@@ -30,10 +37,17 @@ public class CarScoreManager : MonoBehaviour {
         timer = timer - Time.deltaTime;
 
         coneFrequencyTimer = coneFrequencyTimer-Time.deltaTime;
+        chickenFrequencyTimer = chickenFrequencyTimer - Time.deltaTime;
         if (coneFrequencyTimer<0)
         {
             coneFrequencyTimer = coneFrequency;
             SpawnCone();
+        }
+
+        if (chickenFrequencyTimer < 0)
+        {
+            chickenFrequencyTimer = chickenFrequency;
+            SpawnChicken();
         }
     }
 
@@ -61,5 +75,29 @@ public class CarScoreManager : MonoBehaviour {
         }
     }
 
-    
+    public void SpawnChicken()
+    {
+
+        availableChicken.Clear();
+        for (int o = 0; o < chickenSpawner.Length; o++)
+        {
+            if (!chickenSpawner[o].GetComponent<ChickenSpawner>().hasChicken)
+            {
+                availableChicken.Add(chickenSpawner[o]);
+            }
+
+        }
+
+        if (availableChicken.Count >= 1)
+        {
+            int rng1 = Random.Range(0, availableChicken.Count - 1);
+            GameObject chickenClone = Instantiate(Resources.Load("Poulet"), availableChicken[rng1].transform.position, Quaternion.identity) as GameObject;
+            chickenClone.GetComponent<Chicken>().spawner = availableChicken[rng1];
+            availableChicken[rng1].GetComponent<ChickenSpawner>().hasChicken = true;
+            chickenInPlay++;
+            totalObstacle++;
+        }
+    }
+
+
 }
