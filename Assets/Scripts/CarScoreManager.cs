@@ -9,7 +9,7 @@ public class CarScoreManager : MonoBehaviour {
     public static int chickenInPlay;
     public static int totalObstacle;
     public float timer;
-    public float arrivedUser;
+    public static int arrivedUser;
     public float coneRemoved;
     public static GameObject[] coneSpawner;
     public static List<GameObject> availableCone = new List<GameObject>();
