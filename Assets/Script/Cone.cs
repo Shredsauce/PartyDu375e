@@ -22,6 +22,7 @@ public class Cone : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             car.GetComponent<CarScoreManager>().coneRemoved += 1;
+            CarScoreManager.coneInPlay -= 1;
             Destroy(this.gameObject);
         }
     }
