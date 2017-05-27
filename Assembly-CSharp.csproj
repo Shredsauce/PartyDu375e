@@ -70,6 +70,8 @@
      <Compile Include="Assets\NavMeshExamples\Tests\NavMeshSurfaceModifierVolumeTests.cs" />
      <Compile Include="Assets\NavMeshExamples\Tests\NavMeshSurfaceTests.cs" />
      <Compile Include="Assets\Scripts\CarScoreManager.cs" />
+     <Compile Include="Assets\Scripts\Chicken.cs" />
+     <Compile Include="Assets\Scripts\ChickenSpawner.cs" />
      <Compile Include="Assets\Scripts\Cone.cs" />
      <Compile Include="Assets\Scripts\ConeSpawner.cs" />
      <Compile Include="Assets\Scripts\Partier.cs" />
