@@ -74,7 +74,6 @@
      <Compile Include="Assets\Script\PartierSpawner.cs" />
      <Compile Include="Assets\Scripts\CarScoreManager.cs" />
      <Compile Include="Assets\Scripts\Cone.cs" />
-     <Compile Include="Assets\Scripts\ConeSpawner.cs" />
      <Compile Include="Assets\Scripts\Partier.cs" />
      <Compile Include="Assets\Scripts\SmoothFollow2.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
