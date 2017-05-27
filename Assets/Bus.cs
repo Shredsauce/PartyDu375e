@@ -35,7 +35,5 @@ public class Bus : MonoBehaviour {
 			// Set the next way point destination
 			m_agent.destination = wayPoints[currentWayPointIndex++ % wayPoints.Length].position;
 		}
-			
 	}
-
 }
