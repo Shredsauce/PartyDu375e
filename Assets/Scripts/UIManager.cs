@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour {
     public GameObject car;
     public float timer;
     public float arrived;
-    public float cone;
+    public float score;
 
     // Use this for initialization
     void Start () {
@@ -26,12 +26,12 @@ public class UIManager : MonoBehaviour {
         textTimer.text = ""+ timer;
 
         //Get arrived user float from car score manager and put it in the ui text
-        arrived = car.GetComponent<CarScoreManager>().arrivedUser;
+        arrived = CarScoreManager.arrivedUser;
         textArrived.text = "" + arrived;
 
         //Get coneremoved float from car score manager and put it in the ui text
-        cone = car.GetComponent<CarScoreManager>().coneRemoved;
-        textCone.text = "" + cone;
+        score= CarScoreManager.score;
+        textCone.text = "" + score;
 
     }
 }

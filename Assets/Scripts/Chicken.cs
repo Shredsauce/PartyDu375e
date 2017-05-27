@@ -26,6 +26,7 @@ public class Chicken : MonoBehaviour {
             //car.GetComponent<CarScoreManager>().coneRemoved++;
             CarScoreManager.chickenInPlay--;
             CarScoreManager.totalObstacle--;
+            CarScoreManager.score++;
             spawner.GetComponent<ChickenSpawner>().hasChicken = false;
             Destroy(this.gameObject);
         }

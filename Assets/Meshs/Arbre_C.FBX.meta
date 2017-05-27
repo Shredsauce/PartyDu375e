@@ -1,47 +1,16 @@
 fileFormatVersion: 2
-guid: ea509064c62b74cc892b81590d23f5c1
-timeCreated: 1495903305
+guid: 948fcbce922a3c743bd2576dec0f883e
+timeCreated: 1495915566
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Bn_Head
-    100004: Bn_L_Clav
-    100006: Bn_L_Forearm
-    100008: Bn_L_Hand
-    100010: Bn_L_Upperarm
-    100012: Bn_Neck
-    100014: Bn_R_Clav
-    100016: Bn_R_Forearm
-    100018: Bn_R_Hand
-    100020: Bn_R_Upperarm
-    100022: Bn_Root
-    100024: Bn_Spine1
-    100026: Bn_Spine2
-    100028: Bn_Spine3
-    100030: CHAR_Playable
     400000: //RootNode
-    400002: Bn_Head
-    400004: Bn_L_Clav
-    400006: Bn_L_Forearm
-    400008: Bn_L_Hand
-    400010: Bn_L_Upperarm
-    400012: Bn_Neck
-    400014: Bn_R_Clav
-    400016: Bn_R_Forearm
-    400018: Bn_R_Hand
-    400020: Bn_R_Upperarm
-    400022: Bn_Root
-    400024: Bn_Spine1
-    400026: Bn_Spine2
-    400028: Bn_Spine3
-    400030: CHAR_Playable
     2300000: //RootNode
     3300000: //RootNode
-    4300000: CHAR_Playable
+    4300000: Arbre_C
     9500000: //RootNode
-    13700000: CHAR_Playable
   materials:
     importMaterials: 1
     materialName: 0
@@ -87,7 +56,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -100,7 +69,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    rootMotionBoneName: Bn_Root
+    rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
