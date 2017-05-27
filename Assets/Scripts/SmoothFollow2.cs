@@ -36,7 +36,10 @@ public class SmoothFollow2 : MonoBehaviour
         newPosition = Vector3.Lerp(transform.position, wantedPosition, Time.deltaTime * damping);
         transform.position = new Vector3(newPosition.x, height, newPosition.z);
 
-        Quaternion wantedRotation = Quaternion.LookRotation(target.position - transform.position, target.up);
-        transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, 1);
+        Quaternion wantedRotation = Quaternion.LookRotation(target.position - transform.position, Vector3.up);
+        transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, Time.deltaTime * rotationDamping);
+
+
+
     }
 }
