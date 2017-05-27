@@ -1,26 +1,26 @@
 fileFormatVersion: 2
-guid: 462ba357f6147914ba3cf5bf5087f58e
-timeCreated: 1495915566
+guid: 23cacd93421dc4a2e9aa774f1b8c17a1
+timeCreated: 1495924625
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Arbre_B
-    100004: Bn_Root
-    100006: Bn_Tronc1
-    100008: Bn_Tronc2
-    400000: //RootNode
-    400002: Arbre_B
-    400004: Bn_Root
-    400006: Bn_Tronc1
-    400008: Bn_Tronc2
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Arbre_A001
-    4300002: Arbre_B
+    100000: Be_Cone4
+    100002: Bn_Cone1
+    100004: Bn_Cone2
+    100006: Bn_Cone3
+    100008: Bn_Cone4
+    100010: Bn_Root
+    100012: //RootNode
+    400000: Be_Cone4
+    400002: Bn_Cone1
+    400004: Bn_Cone2
+    400006: Bn_Cone3
+    400008: Bn_Cone4
+    400010: Bn_Root
+    400012: //RootNode
+    7400000: ConeOrange@idle
     9500000: //RootNode
-    13700000: Arbre_B
   materials:
     importMaterials: 1
     materialName: 0
@@ -47,7 +47,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 5
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

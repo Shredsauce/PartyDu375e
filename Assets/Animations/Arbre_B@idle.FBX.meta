@@ -1,26 +1,20 @@
 fileFormatVersion: 2
-guid: 462ba357f6147914ba3cf5bf5087f58e
-timeCreated: 1495915566
+guid: 9ed0154f4cc234ce2ad8af80e5d2963e
+timeCreated: 1495924625
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Arbre_B
-    100004: Bn_Root
-    100006: Bn_Tronc1
-    100008: Bn_Tronc2
+    100002: Bn_Root
+    100004: Bn_Tronc1
+    100006: Bn_Tronc2
     400000: //RootNode
-    400002: Arbre_B
-    400004: Bn_Root
-    400006: Bn_Tronc1
-    400008: Bn_Tronc2
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Arbre_A001
-    4300002: Arbre_B
+    400002: Bn_Root
+    400004: Bn_Tronc1
+    400006: Bn_Tronc2
+    7400000: Arbre_B
     9500000: //RootNode
-    13700000: Arbre_B
   materials:
     importMaterials: 1
     materialName: 0
