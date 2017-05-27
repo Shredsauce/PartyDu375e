@@ -4,6 +4,7 @@ using UnityEngine;
 
 
 public class CarScoreManager : MonoBehaviour {
+	public static CarScoreManager Instance { get; private set; }
 
     public static int coneInPlay;
     public static int chickenInPlay;
@@ -21,8 +22,14 @@ public class CarScoreManager : MonoBehaviour {
     float chickenFrequency = 5;
     float chickenFrequencyTimer;
 
+	void Awake () {
+		if (Instance != null && Instance != this) {
+			Destroy(this.gameObject);
+		} else {
+			Instance = this;
+		}
+	}
 
-    // Use this for initialization
     void Start () {
         timer = 375;
         coneSpawner = GameObject.FindGameObjectsWithTag("ConeSpawner");
@@ -31,7 +38,6 @@ public class CarScoreManager : MonoBehaviour {
         chickenFrequencyTimer = 5;
     }
 	
-	// Update is called once per frame
 	void Update () {
 
         timer = timer - Time.deltaTime;
@@ -51,7 +57,6 @@ public class CarScoreManager : MonoBehaviour {
         }
     }
 
- 
     public void SpawnCone()
     {
         availableCone.Clear();
