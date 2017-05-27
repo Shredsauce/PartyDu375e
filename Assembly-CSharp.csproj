@@ -71,6 +71,8 @@
      <Compile Include="Assets\NavMeshExamples\Tests\NavMeshSurfaceTests.cs" />
      <Compile Include="Assets\Script\CarScoreManager.cs" />
      <Compile Include="Assets\Script\Cone.cs" />
+     <Compile Include="Assets\Script\ConeSpawner.cs" />
+     <Compile Include="Assets\Script\Partier.cs" />
      <Compile Include="Assets\Script\SmoothFollow2.cs" />
      <Compile Include="Assets\Script\UIManager.cs" />
      <None Include="Assets\Standard Assets\Vehicles\Car\Shaders\DiffuseReflectiveShader.shader" />
