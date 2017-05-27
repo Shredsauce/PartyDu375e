@@ -13,7 +13,8 @@ public class PartierSpawner : MonoBehaviour {
 	private float waitMax = 1f;
 	
 	void Awake () {
-		StartCoroutine (WaitToAddPartier());
+		// TEMPORARILY commented out so that only one partier moves
+//		StartCoroutine (WaitToAddPartier());
 	}
 
 	// Adds new partiers recursively forever and ever
