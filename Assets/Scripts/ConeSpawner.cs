@@ -15,4 +15,9 @@ public class ConeSpawner : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawIcon(transform.position,"cone" , true);
+    }
 }
