@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Cone : MonoBehaviour {
-	
+
+	[HideInInspector]
 	public ConeSpawner spawner;
+	[SerializeField]
+	private GameObject explosion;
 
     void OnTriggerEnter(Collider other)
     {
@@ -28,6 +31,9 @@ public class Cone : MonoBehaviour {
 
 	private IEnumerator WaitToDisappear () {
 		yield return new WaitForSeconds(0f);
+
+		GameObject explosionGO = (GameObject)Instantiate(explosion, this.transform.position, Quaternion.identity);
+		Destroy(explosionGO, 2f);
 		Destroy(this.gameObject);
 	}
 }
