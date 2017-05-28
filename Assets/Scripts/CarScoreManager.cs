@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +9,7 @@ public class CarScoreManager : MonoBehaviour {
     public static int coneInPlay;
     public static int chickenInPlay;
     public static int totalObstacle;
+    public static float speedPowerUpDown;
     public float timer;
     public static int arrivedUser;
     public float coneRemoved;
@@ -41,6 +42,7 @@ public class CarScoreManager : MonoBehaviour {
         chickenSpawner = GameObject.FindGameObjectsWithTag("ChickenSpawner");
         coneFrequencyTimer = 5;
         chickenFrequencyTimer = 5;
+        speedPowerUpDown = 1;
     }
 	
 	void Update () {
@@ -52,6 +54,16 @@ public class CarScoreManager : MonoBehaviour {
         {
             coneFrequencyTimer = coneFrequency;
             SpawnCone();
+            if(speedPowerUpDown> 1) 
+            {
+                speedPowerUpDown -= 0.1f;
+                Mathf.Clamp(speedPowerUpDown, 1, 2);
+            }
+            else if (speedPowerUpDown < 1)
+            {
+                speedPowerUpDown += 0.1f;
+                Mathf.Clamp(speedPowerUpDown, 0, 0.8f);
+            }
         }
 
         if (chickenFrequencyTimer < 0)
@@ -105,6 +117,17 @@ public class CarScoreManager : MonoBehaviour {
             totalObstacle++;
         }
     }
+    public void PowerUpDown(bool upDown)
+    {
 
+        if (upDown)
+        {
+            speedPowerUpDown = speedPowerUpDown * 1.02f;
 
+        }
+        else
+        {
+            speedPowerUpDown= speedPowerUpDown * 0.98f;
+        }
+    }
 }

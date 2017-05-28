@@ -83,8 +83,8 @@ public class Partier : MonoBehaviour {
 		coll.isTrigger = false;
 		m_agent.enabled = false;
 		rb.isKinematic = false;
-
-		rb.velocity = otherRb.velocity * hitMultiplier;
+        CarScoreManager.Instance.PowerUpDown(false);
+        rb.velocity = otherRb.velocity * hitMultiplier;
 
 		yield return new WaitForSeconds(dazedTime);
 
@@ -122,6 +122,7 @@ public class Partier : MonoBehaviour {
 		mat.color = newColor;
         CarScoreManager.arrivedUser++;
         CarScoreManager.score++;
+        CarScoreManager.Instance.PowerUpDown(true);
         Destroy(this.gameObject);
 	}
 }
