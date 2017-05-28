@@ -9,6 +9,7 @@ public class CarScoreManager : MonoBehaviour {
     public static int coneInPlay;
     public static int chickenInPlay;
     public static int totalObstacle;
+    public Canvas endgame;
     public static float speedPowerUpDown;
     public float timer;
     public static int arrivedUser;
@@ -43,11 +44,17 @@ public class CarScoreManager : MonoBehaviour {
         coneFrequencyTimer = 5;
         chickenFrequencyTimer = 5;
         speedPowerUpDown = 1;
+        score = 0;
+        arrivedUser = 0;
     }
 	
 	void Update () {
         timer = timer - Time.deltaTime;
-
+        if (timer <=0)
+        {
+            endgame.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
         coneFrequencyTimer = coneFrequencyTimer-Time.deltaTime;
         chickenFrequencyTimer = chickenFrequencyTimer - Time.deltaTime;
         if (coneFrequencyTimer<0)
