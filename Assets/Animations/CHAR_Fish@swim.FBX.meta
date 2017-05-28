@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-guid: 8c30fb5408b952d45881b8581924e835
-timeCreated: 1495929923
+guid: e7e53d07656993246bb253a88bafceda
+timeCreated: 1495933943
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Bn_B_Fin
-    100004: Bn_L_Fin
-    100006: Bn_R_Fin
-    100008: Bn_Root
-    100010: Char_Fish
-    400000: //RootNode
-    400002: Bn_B_Fin
-    400004: Bn_L_Fin
-    400006: Bn_R_Fin
-    400008: Bn_Root
-    400010: Char_Fish
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: nageoire
-    4300002: Char_Fish
+    100000: Bn_B_Fin
+    100002: Bn_L_Fin
+    100004: Bn_R_Fin
+    100006: Bn_Root
+    100008: //RootNode
+    400000: Bn_B_Fin
+    400002: Bn_L_Fin
+    400004: Bn_R_Fin
+    400006: Bn_Root
+    400008: //RootNode
+    7400000: CHAR_Fish
     9500000: //RootNode
-    13700000: Char_Fish
   materials:
     importMaterials: 1
     materialName: 0

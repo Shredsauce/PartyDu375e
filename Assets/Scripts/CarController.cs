@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace UnityStandardAssets.Vehicles.Car
@@ -57,7 +58,6 @@ namespace UnityStandardAssets.Vehicles.Car
         // Use this for initialization
         private void Start()
         {
-            
             m_WheelMeshLocalRotations = new Quaternion[4];
             for (int i = 0; i < 4; i++)
             {
@@ -87,12 +87,6 @@ namespace UnityStandardAssets.Vehicles.Car
             {
                 m_GearNum++;
             }
-
-//			Debug.Log("m_GearNum: " + m_GearNum);
-//			Debug.Log("NoOfGears: " + NoOfGears);
-//			Debug.Log("MaxSpeed: " + MaxSpeed);
-//			Debug.Log("CurrentSpeed: " + CurrentSpeed);
-
         }
 
 
@@ -145,15 +139,8 @@ namespace UnityStandardAssets.Vehicles.Car
 
             //clamp input values
             steering = Mathf.Clamp(steering, -1, 1);
-//          AccelInput = accel = Mathf.Clamp(accel, 0, 1);
-
-			// Footbrake issue fixed by only using accel and setting footbrake to 0
-
-			AccelInput = accel;
-			BrakeInput = footbrake = -1*Mathf.Clamp(footbrake, -1, 0);
-
-			footbrake = 0;
-
+            AccelInput = accel = Mathf.Clamp(accel, 0, 1);
+            BrakeInput = footbrake = -1*Mathf.Clamp(footbrake, -1, 0);
             handbrake = Mathf.Clamp(handbrake, 0, 1);
 
             //Set the steer on the front wheels.
@@ -174,6 +161,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 m_WheelColliders[2].brakeTorque = hbTorque;
                 m_WheelColliders[3].brakeTorque = hbTorque;
             }
+
 
             CalculateRevs();
             GearChanging();
@@ -207,7 +195,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void ApplyDrive(float accel, float footbrake)
         {
-            accel = accel * CarScoreManager.speedPowerUpDown;
+
             float thrustTorque;
             switch (m_CarDriveType)
             {

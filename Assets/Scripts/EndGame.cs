@@ -13,7 +13,7 @@ public class EndGame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        score.text = ""+ CarScoreManager.score;
+        score.text = "Score :"+ CarScoreManager.score;
 
     }
 }
